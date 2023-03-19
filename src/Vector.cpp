@@ -74,6 +74,10 @@ const bool& Vector::operator==(const Vector& other) const noexcept
 
 }
 
+const bool& Vector::operator!=(const Vector& other) const noexcept
+{
+	return !( this->operator==(other));
+}
 
 std::strong_ordering Vector::operator<=>(const Vector& other) const noexcept
 {

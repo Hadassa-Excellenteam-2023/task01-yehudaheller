@@ -8,11 +8,23 @@ using namespace std;
 
 int main()
 {
-	Vector v1(5, 15);
-	v1.insert(8,3);
-	 
+	//tests:
+	Vector v1(7, 6);
+	Vector v2(5, 15);
+	
+	Vector v3(v2);
 
-	for (int i = 0; i < v1.size(); i++)
-		cout << v1[i] << endl;
+	if (v1 != v2)
+		cout << "is not equal" << endl;
+	else if(v1 > v2)
+		cout << "v1 > v2" << endl;
+	else if (v1 < v2)
+		cout << "v1 < v2" << endl;
+	
+	
+
+
+	for (int i = 0; i < v3.size(); i++)
+		cout << v3[i] << endl;
 	return 0;
 }

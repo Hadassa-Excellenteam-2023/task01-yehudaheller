@@ -27,6 +27,7 @@ public:
 	void pop_back();
 	void insert(size_t index, int value);
 	void erase(int index);
+	const bool& operator!=(const Vector& other) const noexcept;
 
 private:
 	int m_size;
