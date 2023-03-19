@@ -43,22 +43,39 @@ Vector& Vector::operator=(const Vector& other)
 
 int& Vector::operator[](const int index)
 {
-	if (m_size <= index)
+	try
 	{
-		throw std::out_of_range("Invalid index: index out of range");
+		if (m_size <= index)
+		{
+			throw std::out_of_range("Invalid index: index out of range");
+		}
+
+		return m_data[index];
+	}
+	catch (const std::out_of_range& e)
+	{
+		// Handle the exception 
+		std::cerr << "Error: " << e.what() << '\n';
 	}
 
-	return m_data[index];
 }
 
 const int& Vector::operator[](const int index) const
 {
-	if (m_size <= index)
-	{
-		throw std::out_of_range("Invalid index: index out of range");
+	try {
+		if (m_size <= index)
+		{
+			throw std::out_of_range("Invalid index: index out of range");
+		}
+
+		return m_data[index];
+	}
+	catch (const std::out_of_range& e) {
+		// Handle the exception:
+		std::cerr << "Error: " << e.what() << '\n';
+		
 	}
 
-	return m_data[index];
 }
 
 const bool& Vector::operator==(const Vector& other) const noexcept
