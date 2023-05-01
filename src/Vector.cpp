@@ -1,5 +1,6 @@
 #include "..\include\Vector.h"
 
+
 //defult constractor
 Vector::Vector(size_t size, int value) : m_size(size), m_capacity(size), m_data(new int[size])
 {
